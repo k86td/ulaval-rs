@@ -1,0 +1,28 @@
+# Rust build artifacts
+/target
+**/target
+
+# Captured HTTP archives.
+#
+# The .har files under docs/ are real browser captures of authenticated
+# sessions against brioeducation.ca and monportail.ulaval.ca. They contain
+# live Authorization headers, session cookies, OAuth access/refresh/id
+# tokens, and personal data belonging to third-party users.
+#
+# They are deliberately untracked. Do not commit them: git history would
+# retain the credentials even after a later deletion. Keep them local, or
+# commit only a redacted/sanitised extract.
+docs/*.har
+
+# Local environment and credentials
+.env
+.env.*
+*.pem
+*.key
+secrets.toml
+
+# Editor / OS noise
+.DS_Store
+.idea/
+.vscode/
+*.swp
